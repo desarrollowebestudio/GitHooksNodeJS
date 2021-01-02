@@ -1,19 +1,21 @@
 {
-  "name": "GitHooksNodeJS",
+  "name": "git-hooks-nodejs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "pre-commit": [
-    "test"
-  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^26.6.3",
-    "pre-commit": "^1.2.2"
+    "husky": "^4.3.6",
+    "jest": "^26.6.3"
   }
 }
