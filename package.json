@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint source/**"
+    "lint": "eslint source/**",
+    "mensaje-final": "echo Tu commit fue revisado exitosamente, $GIT_AUTHOR_NAME"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "post-commit": "npm run mensaje-final"
     }
   },
   "lint-staged": {
