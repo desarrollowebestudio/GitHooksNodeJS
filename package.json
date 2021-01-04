@@ -6,11 +6,13 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint source/**",
+    "lint-fix": "eslint source/** --fix",
     "mensaje-final": "echo Tu commit fue revisado exitosamente, $GIT_AUTHOR_NAME"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "post-commit": "npm run mensaje-final"
     }
   },
@@ -22,11 +24,16 @@
   },
   "commitlint": {
     "rules": {
-      "references-empty": [2, "never"]
+      "references-empty": [
+        2,
+        "never"
+      ]
     },
-   "parserPreset": {
-      "parsetOpts": {
-        "issuePrefixes": ["JIRA-"]
+    "parserPreset": {
+      "parserOpts": {
+        "issuePrefixes": [
+          "JIRA-"
+        ]
       }
     }
   },
